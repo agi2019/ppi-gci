@@ -333,9 +333,9 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     # Prevent null and zero allocations	    	    
     ## P0 = Bs[:,0].sum()*P0/P0.sum()
     P0 = np.nan_to_num(P0, nan=1e-12)
-    Bs[Bs==0] = 10e-12
+    #Bs[Bs==0] = 10e-12
     P0 = np.nan_to_num(P0, nan=1e-12)
-    P0[P0==0] = 10e-12
+    #P0[P0==0] = 10e-12
     print("P0 keempat", P0)
 		    
     ## INSTANTIATE ALL VARIABLES AND CREATE CONTAINERS TO STORE DATA
