@@ -328,7 +328,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         relevant_indis = inst2idx[indis].astype(int)
         P0[relevant_indis] += Bs[i,0]*p0[relevant_indis]/p0[relevant_indis].sum()
         print("P0 ketiga", P0)
-	i+=1
+    i+=1
     
     # Prevent null allocations
     #P0 = betas*np.power(I0, alphas)*np.power(1-I0, alphas_prime)	    	    
