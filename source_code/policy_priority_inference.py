@@ -276,7 +276,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         T = 50
 
     # Payment schedule
-    if Bs is None:
+    if Bs is 'nan':
         Bs = np.array([np.ones(T)*100])
     else:
         assert type(Bs) is np.ndarray, 'Bs must be a numpy vector or a matrix'
@@ -362,21 +362,6 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
 
     ## MAIN LOOP
     for t in range(T):
-        for p in range(num_programmes): 
-            # Print statements for debugging
-            print(f"t={t}, p={p}")
-            print("bs:", bs) 
-            print("betas:", betas)
-            print("S:", S)  # Print S before calculating P
-            print("I:", I)  # Print I for checking if it's within bounds
-            print("Imax:", Imax)
-            print("Imin:", Imin)# Before calculating C, add debugging prints
-            print("X values:", X)
-            print("P values:", P)
-            print("Min X:", np.min(X))
-            print("Max X:", np.max(X))
-            print("Min P:", np.min(P))
-         
         tsI[:,t] = I # store this period's indicators
         tsP[:,t] = P # store this period's allocations
 
