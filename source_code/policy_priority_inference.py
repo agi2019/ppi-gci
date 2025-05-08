@@ -317,11 +317,11 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         gaps[G<I0] = 0
         p0 = gaps/gaps.sum()
         P0 = np.zeros(n)
-	print("P0 pertama", P0)
+        print("P0 pertama", P0)
     else:
         P0 = np.zeros(n)
         p0 = np.random.rand(n)
-	print("P0 kedua", P0)
+        print("P0 kedua", P0)
     i=0
     for program in sorted_programs:
         indis = program2indis[program]
