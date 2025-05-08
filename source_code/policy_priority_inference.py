@@ -276,7 +276,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         T = 50
 
     # Payment schedule
-    if Bs is 'nan':
+    if Bs is None:
         Bs = np.array([np.ones(T)*100])
     else:
         assert type(Bs) is np.ndarray, 'Bs must be a numpy vector or a matrix'
