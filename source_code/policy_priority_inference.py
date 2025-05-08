@@ -371,6 +371,20 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         Xt = X.copy() # update lagged actions
         X = X + sign*np.abs(changeF) # determine current action
         assert np.sum(np.isnan(X)) == 0, 'X has invalid values!'
+
+	# Before calculating C, add debugging prints
+        print("X values:", X)
+        print("P values:", P)
+        print("Min X:", np.min(X))
+        print("Max X:", np.max(X))
+        print("Min P:", np.min(P))
+        print("Max P:", np.max(P))
+
+   	# Check for invalid values in P before calculating C
+        if np.any(P <= 0):
+          print("Warning: P contains zero or negative values!")
+          P[P <= 0] = 1e-10  # Replace zero or negative values with a small positive value  
+	    
         C = P/(1 + np.exp(-X)) # map action into contribution
         assert np.sum(np.isnan(C)) == 0, 'C has invalid values bro!'
         assert np.sum(P < C)==0, 'C cannot be larger than P!'
