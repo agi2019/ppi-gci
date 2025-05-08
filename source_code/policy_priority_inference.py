@@ -328,18 +328,15 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         i+=1
     
     # Prevent null allocations
-    P0 = betas*np.power(I0, alphas)*np.power(1-I0, alphas_prime)	    
-    print("P0 betas:", P0)	    
+    P0 = betas*np.power(I0, alphas)*np.power(1-I0, alphas_prime)	    	    
     P0 = Bs[:,0].sum()*P0/P0.sum()    
     Bs[Bs==0] = 10e-12
     P0[P0==0] = 10e-12
-    print("P0:", P0) 
     
     ## INSTANTIATE ALL VARIABLES AND CREATE CONTAINERS TO STORE DATA
     num_programmes = Bs.shape[1]
     S = Bs
     P = P0.copy() # first allocation
-    print("P:", P) 
     F = np.random.rand(n) # policymakers' benefits
     Ft = np.random.rand(n) # lagged benefits
     X = np.random.rand(n)-.5 # policymakers' actions
