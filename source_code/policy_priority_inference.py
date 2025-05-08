@@ -371,7 +371,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         Xt = X.copy() # update lagged actions
         X = X + sign*np.abs(changeF) # determine current action
         assert np.sum(np.isnan(X)) == 0, 'X has invalid values!'
-        C = P/(1 + np.exp(-X)) # map action into contribution
+        C = P/(1 + np.exp(X)) # map action into contribution
         assert np.sum(np.isnan(C)) == 0, 'C has invalid values!'
         assert np.sum(P < C)==0, 'C cannot be larger than P!'
         signt = sign.copy() # update previous signs
