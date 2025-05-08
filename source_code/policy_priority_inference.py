@@ -360,9 +360,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     
     ## MAIN LOOP
     for t in range(T):
-	for p in range(P): 
-            # ... (inside the priority loop) ...
-
+	    for p in range(P): 
             # Print statements for debugging
             print(f"t={t}, p={p}")
             print("bs:", bs) 
