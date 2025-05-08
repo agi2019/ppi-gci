@@ -372,6 +372,10 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         X = X + sign*np.abs(changeF) # determine current action
         assert np.sum(np.isnan(X)) == 0, 'X has invalid values!'
 
+
+
+
+	    
 	# Before calculating C, add debugging prints
         print("X values:", X)
         print("P values:", P)
