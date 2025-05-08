@@ -331,6 +331,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     P0 = Bs[:,0].sum()*P0/P0.sum()
     Bs[Bs==0] = 10e-12
     P0[P0==0] = 10e-12
+    print("P0:", P0) 
     
     
     
@@ -369,8 +370,13 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
             print("S:", S)  # Print S before calculating P
             print("I:", I)  # Print I for checking if it's within bounds
             print("Imax:", Imax)
-            print("Imin:", Imin)
-            num_programmes = bs*betas*S
+            print("Imin:", Imin)# Before calculating C, add debugging prints
+            print("X values:", X)
+            print("P values:", P)
+            print("Min X:", np.min(X))
+            print("Max X:", np.max(X))
+            print("Min P:", np.min(P))
+         
 
         tsI[:,t] = I # store this period's indicators
         tsP[:,t] = P # store this period's allocations
@@ -393,12 +399,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         X = X + sign*np.abs(changeF) # determine current action
         assert np.sum(np.isnan(X)) == 0, 'X has invalid values!'
 	    
-	# Before calculating C, add debugging prints
-        print("X values:", X)
-        print("P values:", P)
-        print("Min X:", np.min(X))
-        print("Max X:", np.max(X))
-        print("Min P:", np.min(P))
+	
         print("Max P:", np.max(P))
 
    	# Check for invalid values in P before calculating C
