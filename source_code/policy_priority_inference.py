@@ -360,7 +360,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     
     ## MAIN LOOP
     for t in range(T):
-	    for p in range(P): 
+        for p in range(P): 
             # Print statements for debugging
             print(f"t={t}, p={p}")
             print("bs:", bs) 
@@ -369,11 +369,8 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
             print("I:", I)  # Print I for checking if it's within bounds
             print("Imax:", Imax)
             print("Imin:", Imin)
-        
             P = bs*betas*S
 
-
-	    
         tsI[:,t] = I # store this period's indicators
         tsP[:,t] = P # store this period's allocations
 
@@ -394,10 +391,6 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         Xt = X.copy() # update lagged actions
         X = X + sign*np.abs(changeF) # determine current action
         assert np.sum(np.isnan(X)) == 0, 'X has invalid values!'
-
-
-
-
 	    
 	# Before calculating C, add debugging prints
         print("X values:", X)
@@ -504,7 +497,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
             assert np.sum(q == 0 ) == 0, 'q has zero values!'
             qs_hat = q**bs[relevant_indis] # modulate expenditure propensities
             P[relevant_indis] += Bs[i,t]*qs_hat/qs_hat.sum()
-            
+
         # optional assertion that checks for consistency between the total budget and the sum of the allocations
         # assert abs(P.sum() - Bs[:,t].sum()) < 1e-6, 'unequal budgets ' + str(abs(P.sum() - Bs[:,t].sum()))
         
