@@ -329,7 +329,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     
     # Prevent null allocations
     P0 = betas*np.power(I0, alphas)*np.power(1-I0, alphas_prime)	    
-    print("P0 betas:", P0	    
+    print("P0 betas:", P0)	    
     P0 = Bs[:,0].sum()*P0/P0.sum()    
     Bs[Bs==0] = 10e-12
     P0[P0==0] = 10e-12
