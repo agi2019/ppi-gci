@@ -339,7 +339,6 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
 		    
     ## INSTANTIATE ALL VARIABLES AND CREATE CONTAINERS TO STORE DATA
     P = P0.copy() # first allocation
-    print('P value:',P)
     F = np.random.rand(n) # policymakers' benefits
     Ft = np.random.rand(n) # lagged benefits
     X = np.random.rand(n)-.5 # policymakers' actions
