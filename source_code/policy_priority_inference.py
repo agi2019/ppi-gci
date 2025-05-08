@@ -181,6 +181,16 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
             Matrix with the time series of the simulated growth probabilities. 
             Each row corresponds to an indicator and each column to a simulation step.
     """
+    ## check input data for NaN or infinite values
+    input_vars = {
+        "I0": I0, "alphas": alphas, "alphas_prime": alphas_prime, "betas": betas,
+        "A": A, "R": R, "bs": bs, "qm": qm, "rl": rl, "Imax": Imax, "Imin": Imin,
+        "Bs": Bs, "B_dict": B_dict, "G": G, "T": T, "frontier": frontier
+    }
+    for var_name, var_value in input_vars.items():
+        if isinstance(var_value, np.ndarray):
+            if np.isnan(var_value).any() or np.isinf(var_value).any():
+                raise ValueError(f"Input variable '{var_name}' contains NaN or infinite values.")
     
     
     
