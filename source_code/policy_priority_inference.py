@@ -339,6 +339,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     num_programmes = Bs.shape[1]
     S = Bs
     P = P0.copy() # first allocation
+    print("P:", P) 
     F = np.random.rand(n) # policymakers' benefits
     Ft = np.random.rand(n) # lagged benefits
     X = np.random.rand(n)-.5 # policymakers' actions
@@ -358,8 +359,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     tsS = np.empty((N,T)) # stores time series of spillovers
     tsG = np.empty((N,T)) # stores time series of gammas
     
-    
-    
+
     ## MAIN LOOP
     for t in range(T):
         for p in range(num_programmes): 
@@ -377,10 +377,8 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
             print("Max X:", np.max(X))
             print("Min P:", np.min(P))
          
-
         tsI[:,t] = I # store this period's indicators
         tsP[:,t] = P # store this period's allocations
-
 
         ### REGISTER INDICATOR CHANGES ###
         deltaBin = (I>It).astype(int) # binary for computing spillovers
@@ -399,9 +397,6 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
         X = X + sign*np.abs(changeF) # determine current action
         assert np.sum(np.isnan(X)) == 0, 'X has invalid values!'
 	    
-	
-        print("Max P:", np.max(P))
-
    	# Check for invalid values in P before calculating C
         if np.any(P <= 0):
           print("Warning: P contains zero or negative values!")
