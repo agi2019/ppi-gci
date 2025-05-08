@@ -335,7 +335,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     
     
     ## INSTANTIATE ALL VARIABLES AND CREATE CONTAINERS TO STORE DATA
-        
+    num_programmes = Bs.shape[1]     
     P = P0.copy() # first allocation
     F = np.random.rand(n) # policymakers' benefits
     Ft = np.random.rand(n) # lagged benefits
@@ -360,7 +360,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     
     ## MAIN LOOP
     for t in range(T):
-        for p in range(P): 
+        for p in range(num_programmes): 
             # Print statements for debugging
             print(f"t={t}, p={p}")
             print("bs:", bs) 
@@ -369,7 +369,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
             print("I:", I)  # Print I for checking if it's within bounds
             print("Imax:", Imax)
             print("Imin:", Imin)
-            P = bs*betas*S
+            num_programmes = bs*betas*S
 
         tsI[:,t] = I # store this period's indicators
         tsP[:,t] = P # store this period's allocations
