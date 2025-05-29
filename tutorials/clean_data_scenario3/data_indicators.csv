@@ -1,0 +1,64 @@
+2020,2021,2022,2023,2024,seriesCode,sdg,minVals,maxVals,instrumental,seriesName,color,I0,IF,successRates,qm,rl
+0.7969933400461062,1.0,1.0,0.9855458513483031,1.0,gci11_Lonline,11,0.0,1.0,1,Laws on unauthorized online behavior ,#A21942,0.7969933400461062,1.0,0.5,0.467,0.3632
+0.6675068495220475,1.0,0.995455900260013,0.954670913947468,1.0,gci11_Lforgery,11,0.0,1.0,1,legislation in force related to computer-related forgery (piracy/copyright infringements) ,#A21942,0.6675068495220475,1.0,0.5,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci11_Lolsafety,11,0.0,1.0,1,Laws on online safety ,#A21942,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_Rpdp,12,0.0,1.0,1,Regulation(s) related to personal data protection ,#FF3A21,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_Rprivacy,12,0.0,1.0,1,Regulation(s) related to privacy protection ,#FF3A21,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_Rnotif,12,0.0,1.0,1,Regulation(s) related to data breach/incident notification applying to private sector actors ,#FF3A21,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_RAuditre,12,0.0,1.0,1,"Regulation(s) related to cybersecurity audit requirements applying to national government agencies, departments, or their contractors ",#FF3A21,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_Rstandard,12,0.0,1.0,1,Regulation(s) related to cybersecurity standards applying to national public sector actors ,#FF3A21,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_Rsign,12,0.0,1.0,1,Regulation(s) related to use of digital signatures and e-transactions in government services and applications (e-govt),#FF3A21,1.0,1.05,0.05,0.467,0.3632
+1.0,0.8771456484891368,0.9538496574045494,1.0,1.0,gci12_Rspam,12,0.0,1.0,1,"Regulation(s) related to unsolicited communication, also known as spam ",#FF3A21,1.0,1.05,0.5,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci12_Rciip,12,0.0,1.0,1,Regulation(s) related to identifying and protecting national critical infrastructures ,#FF3A21,1.0,1.05,0.05,0.467,0.3632
+0.0,0.6932581027029278,0.7563537381671875,0.8147024503964052,1.0,gci12_Rcop,12,0.0,1.0,0,Regulation(s) related to Child Online Protection ,#FF3A21,0.0,1.0,0.95,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci21_NatCsirt,21,0.0,1.0,1,Fully operational National/Government CIRT/CSIRT/CERT or SOC ,#FD9D24,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci21_Nactivity,21,0.0,1.0,1,National CIRT/CSIRT/CERT or SOC activities ,#FD9D24,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci21_Nfirst,21,0.0,1.0,0,National/Government CIRT/CSIRT/CERT or SOC affiliated with FIRST and/or listed by TF-CSIRT ,#FD9D24,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci21_NregCisrt,21,0.0,1.0,0,"National/Government CIRT/CSIRT/CERT or SOC affiliated with a regional CIRT (such as APCERT, PACSON, AFRICA CERT, ENSIA, OIC, OAS)? ",#FD9D24,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci22_Scsirt,22,0.0,1.0,1,Sectoral CIRTs/CSIRTs/CERTs or SOCs ,#E5243B,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci22_Sactivity,22,0.0,1.0,1,Sectoral CIRTs/CSIRTs/CERTs or SOC Activities ,#E5243B,1.0,1.05,0.05,0.467,0.3632
+1.0,0.923442446620244,0.9867383982496227,1.0,1.0,gci23_FStandard,23,0.0,1.0,1,Framework for the implementation/adoption of nationally or internationally recognized cybersecurity standards ,#DDA63A,1.0,1.05,0.5,0.467,0.3632
+1.0,0.9234424466145613,0.9867383982504657,1.0,1.0,gci23_Fciip,23,0.0,1.0,1,Framework for implementation/adoption of nationally or internationally recognized cybersecurity standards address critical infrastructure ,#DDA63A,1.0,1.05,0.5,0.467,0.3632
+0.47907875185150905,0.6061814256750139,0.730965215458244,0.865748595513254,1.0,gci31_Nstrategy,31,0.0,1.0,1,National Cybersecurity Strategy (NCS) or policy ,#4C9F38,0.47907875185150905,1.0,0.95,0.467,0.3632
+1.0,0.7845520522320858,0.8880721757197525,0.9899577763869153,1.0,gci31_Npriority,31,0.0,1.0,1,National Cybersecurity Strategy Priorities ,#4C9F38,1.0,1.05,0.75,0.467,0.3632
+1.0,0.8814061886543328,0.9285544176324224,0.9717679393244414,1.0,gci32_Acyber,32,0.0,1.0,1,Agency or ministry with the responsibility for cybersecurity at the national level ,#C5192D,1.0,1.05,0.75,0.467,0.3632
+1.0,0.8814061886537146,0.9285544176317682,0.9717679393238791,1.0,gci32_Aciip,32,0.0,1.0,1,Agency or ministry with the responsibility for cybersecurity related to National Critical Infrastructure Protection? ,#C5192D,1.0,1.05,0.75,0.467,0.3632
+1.0,0.8814061886554007,0.9285544176330897,0.9717679393250538,1.0,gci32_Acapacity,32,0.0,1.0,1,"Agency, ministry, task force, or other body with the responsibility for overseeing national cybersecurity capacity development ",#C5192D,1.0,1.05,0.75,0.467,0.3632
+1.0,0.881406188655193,0.928554417632034,0.9717679393252233,1.0,gci32_Acop,32,0.0,1.0,0,"Coordination of Child Online Protection initiatives and activities within the responsibility of any agency, ministry, task force, or other body? ",#C5192D,1.0,1.05,0.75,0.467,0.3632
+1.0,0.9234424466171087,0.9867383982503733,1.0,1.0,gci33_Maudit,33,0.0,1.0,1,Cybersecurity audits performed at a national level ,#26BDE2,1.0,1.05,0.5,0.467,0.3632
+1.0,0.9234424466138482,0.9867383982487975,1.0,1.0,gci33_Mrisk,33,0.0,1.0,1,Metrics/tools for assessing cybersecurity risks at a national level ,#26BDE2,1.0,1.05,0.5,0.467,0.3632
+1.0,0.9234424466161273,0.9867383982496967,1.0,1.0,gci33_Mmaturity,33,0.0,1.0,1,"Measures for assessing the level of cybersecurity development at a national level using tools such as the Cybersecurity Capacity Maturity Model, Cyber Readiness, or any other relevant assessment tools ",#26BDE2,1.0,1.05,0.5,0.467,0.3632
+1.0,0.6456616578494973,0.7894059531920627,0.9450986333297369,1.0,gci34_Copstrategy,34,0.0,1.0,0,"National strategy addressing Child Online Protection, with associated current Child Online Protection initiatives ",#FCC30B,1.0,1.05,0.75,0.467,0.3632
+1.0,0.6456616578505741,0.7894059531900319,0.9450986333314646,1.0,gci34_Copreporting,34,0.0,1.0,0,Government reporting mechanisms and capabilities at the national level deployed to help protect children online ,#FCC30B,1.0,1.05,0.75,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWmsme,41,0.0,1.0,1,Public awareness campaigns specifically targeting MSMEs ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWprivate,41,0.0,1.0,1,Public awareness campaigns specifically targeting the private sector in general ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWpublic,41,0.0,1.0,1,"Public awareness campaigns specifically targeting public sector agencies at local, municipal, and national levels, and public sector workers ",#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWsociety,41,0.0,1.0,1,Public awareness campaigns specifically targeting civil society ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWgeneral,41,0.0,1.0,1,Public awareness campaigns targeting the population in general ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWelderly,41,0.0,1.0,1,Public awareness campaigns specifically targeting older persons (elderly) ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWdisability,41,0.0,1.0,1,Public awareness campaigns specifically targeting persons with specific needs including persons with disabilities ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWcop,41,0.0,1.0,1,"Public awareness campaigns specifically targeting parents, educators, and children as part of Child Online Protection (COP) efforts ",#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci41_AWchildren,41,0.0,1.0,1,Public awareness campaigns specifically targeting children as part of Child Online Protection (COP) efforts ,#FD6925,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci42_Tprofessional,42,0.0,1.0,1,Develop or support cybersecurity training courses for cybersecurity professionals ,#BF8B2E,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci42_Tacreditation,42,0.0,1.0,1,Domestically or internationally recognized accreditation programs for cybersecurity professionals ,#BF8B2E,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci42_Tsector,42,0.0,1.0,1,National sector-specific cybersecurity educational programs/trainings for professionals ,#BF8B2E,1.0,1.05,0.05,0.467,0.3632
+0.3299828987817374,0.6940193417311682,0.7846649553421494,0.875057117725322,1.0,gci43_Cprimary,43,0.0,1.0,1,Develop or support any cybersecurity educational programs included as part of academic curricula in primary education ,#3F7E44,0.3299828987817374,1.0,0.95,0.467,0.3632
+0.329998106495802,0.6940245490624755,0.7846695419044788,0.8750607438735919,1.0,gci43_Csecondary,43,0.0,1.0,1,Develop or support any cybersecurity educational programs included as part of academic curricula in secondary education ,#3F7E44,0.329998106495802,1.0,0.95,0.467,0.3632
+1.0,0.9234424466125116,0.9867383982461091,1.0,1.0,gci43_Chigher,43,0.0,1.0,1,Develop or support any cybersecurity educational programs included as part of academic curricula in higher education ,#3F7E44,1.0,1.05,0.5,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci44_Rndprivate,44,0.0,1.0,1,Private sector actors carry out cybersecurity-related R&D activities ,#0A97D9,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci44_Rndpublic,44,0.0,1.0,1,National public sector actors carry out cybersecurity-related R&D activities ,#0A97D9,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci44_RndAcademic,44,0.0,1.0,1,Academic institutions carry out cybersecurity-related R&D activities ,#0A97D9,1.0,1.05,0.05,0.467,0.3632
+0.0,0.30324785307945734,0.48781149754849257,0.706657254105102,1.0,gci44_Evalscheme,44,0.0,1.0,1,"Programs/initiatives conducted for evaluating the cybersecurity of ICT products, such as labelling or certification schemes ",#0A97D9,0.0,1.0,0.95,0.467,0.3632
+1.0,0.7905907650306959,0.892362011481191,0.9919081739108029,1.0,gci45_Dindustry,45,0.0,1.0,1,Domestic cybersecurity industry,#56C02B,1.0,1.05,0.75,0.467,0.3632
+1.0,0.7905907650314169,0.8923620114824249,0.9919081739114389,1.0,gci45_Dassociation,45,0.0,1.0,1,Organizations or associations which promote the development of your country’s cybersecurity industry ,#56C02B,1.0,1.05,0.75,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci46_Icapacitydev,46,0.0,1.0,1,Government incentive mechanisms in place to encourage capacity development in the field of cybersecurity ,#1BA1E2,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci46_Iindustry,46,0.0,1.0,1,Government incentive mechanisms in place for the development or further development of the cybersecurity industry ,#1BA1E2,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci46_Irnd,46,0.0,1.0,1,Government incentive mechanisms within your country to encourage cybersecurity-related R&D activities ,#1BA1E2,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci51_Bcountry,51,0.0,1.0,1,Bilateral cybersecurity agreement(s) with other countries ,#A4C400,1.0,1.05,0.05,0.467,0.3632
+1.0,0.9007412585922216,0.9617944369508409,1.0,1.0,gci51_Bregintl,51,0.0,1.0,1,Cybersecurity agreement(s) with international and regional organizations ,#A4C400,1.0,1.05,0.5,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci52_Minfosharing,52,0.0,1.0,1,Part of a multilateral cybersecurity agreement that includes cybersecurity information sharing ,#F472D0,1.0,1.05,0.05,0.467,0.3632
+1.0,1.0,1.0,1.0,1.0,gci52_Mcapacitydev,52,0.0,1.0,1,Part of a multilateral cybersecurity agreement that includes capacity development sharing ,#F472D0,1.0,1.05,0.05,0.467,0.3632
+1.0,0.6456616578477702,0.7894059531869231,0.9450986333264448,1.0,gci53_Mlat,53,0.0,1.0,0,Participate in Mutual Legal Assistance Treaties (MLATs) on cybersecurity either through bilateral or multilateral agreement(s) with other countries or regional or intergovernmental organizations,#FA6800,1.0,1.05,0.75,0.467,0.3632
+1.0,0.6456616578498893,0.7894059531900162,0.9450986333263476,1.0,gci54_PPPdomestic,54,0.0,1.0,1,Participate in PPPs on cybersecurity with domestic companies ,#6D8764,1.0,1.05,0.75,0.467,0.3632
+1.0,0.6456616578481336,0.7894059531874045,0.9450986333266206,1.0,gci54_PPPforeign,54,0.0,1.0,1,Participate in PPPs on cybersecurity with foreign companies in your country ,#6D8764,1.0,1.05,0.75,0.467,0.3632
+1.0,0.9993302969938392,1.0,1.0,1.0,gci55_Coordination,55,0.0,1.0,1,Specific inter-agency coordination processes on cybersecurity among different national governmental bodies ,#76608A,1.0,1.05,0.25,0.467,0.3632
