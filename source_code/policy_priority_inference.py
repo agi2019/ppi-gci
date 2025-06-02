@@ -497,7 +497,7 @@ def multi_year_batch_calibration(df_gci, df_bs, years, A, R, B_dict_base,
         I0 = np.zeros(N)
         IF = df_gci[str(year)].values.astype(float)
         cols = year_column_ranges[year]
-	Bs = df_bs.iloc[:, cols].values.astype(float)
+        Bs = df_bs.iloc[:, cols].values.astype(float)
         success = np.clip(IF, 0.05, 0.95)
 
         I0_all.append(I0)
