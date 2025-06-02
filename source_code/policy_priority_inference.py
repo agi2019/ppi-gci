@@ -519,12 +519,13 @@ def multi_year_batch_calibration(df_gci, df_bs, years, year_column_ranges, A, R,
     R_batch = np.vstack(R_all)
     A_batch = block_diag(*[A for _ in years])
     print("I0_batch.shape:", I0_batch.shape)           # harus (N_total,)
-					 print("IF_batch.shape:", IF_batch.shape)           # harus (N_total,)
-print("successRates.shape:", successRates.shape)   # harus (N_total,)
-print("R_batch.shape:", R_batch.shape)             # ideal: (N_total,) atau (N_total, T)
-print("Bs_batch.shape:", Bs_batch.shape)           # harus (N_total, T)
-print("A_batch.shape:", A_batch.shape)             # harus (N_total, N_total)
-print("Jumlah item di B_dict_batch:", len(B_dict_batch))  # harus 
+    print("IF_batch.shape:", IF_batch.shape)           # harus (N_total,)
+    print("successRates.shape:", successRates.shape)   # harus (N_total,)
+    print("R_batch.shape:", R_batch.shape)             # ideal: (N_total,) atau (N_total, T)
+    print("Bs_batch.shape:", Bs_batch.shape)           # harus (N_total, T)
+    print("A_batch.shape:", A_batch.shape)             # harus (N_total, N_total)
+    print("Jumlah item di B_dict_batch:", len(B_dict_batch))  # harus 
+
 					 
     parameters = calibrate(
         I0_batch, IF_batch, success_batch,
