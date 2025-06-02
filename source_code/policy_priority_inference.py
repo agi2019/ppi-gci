@@ -19,6 +19,8 @@ Dependencies
 
 # import necessary libraries
 import numpy as np
+from scipy.linalg import block_diag
+from copy import deepcopy
 from joblib import Parallel, delayed
 import warnings
 warnings.simplefilter("ignore")
@@ -482,7 +484,56 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     return tsI, tsC, tsF, tsP, tsS, tsG
 
 
+def multi_year_batch_calibration(df_gci, df_bs, years, A, R, B_dict_base,
+                                 qm=0.5, rl=1.0, T=1, threshold=1e-6,
+                                 parallel_processes=1, verbose=False,
+                                 low_precision_counts=False):
+    N = df_gci.shape[0]
+    I0_all, IF_all, Bs_all, success_rates_all = [], [], [], []
+    R_all = []
+    B_dict_expanded = {}
 
+    for k, year in enumerate(years):
+        I0 = np.zeros(N)
+        IF = df_gci[str(year)].values.astype(float)
+        Bs = np.tile(df_bs[str(year)].values.astype(float), (T, 1)).T
+        success = np.clip(IF, 0.05, 0.95)
+
+        I0_all.append(I0)
+        IF_all.append(IF)
+        Bs_all.append(Bs)
+        success_rates_all.append(success)
+        R_all.append(deepcopy(R))
+
+        offset = k * N
+        for (i, j), val in B_dict_base.items():
+            B_dict_expanded[(i + offset, j)] = val
+
+    I0_batch = np.concatenate(I0_all)
+    IF_batch = np.concatenate(IF_all)
+    success_batch = np.concatenate(success_rates_all)
+    Bs_batch = np.vstack(Bs_all)
+    R_batch = np.vstack(R_all)
+    A_batch = block_diag(*[A for _ in years])
+
+    import policy_priority_inference as ppi
+    parameters = calibrate(
+        I0_batch, IF_batch, success_batch,
+        A=A_batch,
+        R=R_batch,
+        qm=qm,
+        rl=rl,
+        Bs=Bs_batch,
+        B_dict=B_dict_expanded,
+        T=T,
+        threshold=threshold,
+        parallel_processes=parallel_processes,
+        verbose=verbose,
+        low_precision_counts=low_precision_counts
+    )
+
+    return parameters
+					 
 ## Calibrates PPI automatically and return a Pandas DataFrame with the parameters, errors, and goodness of fit
 def calibrate(I0, IF, success_rates, A=None, R=None, bs=None, qm=None, rl=None,  Bs=None, B_dict=None, 
               T=None, threshold=.8, parallel_processes=None, 
@@ -752,90 +803,6 @@ def compute_error(I0, IF, success_rates, alphas, alphas_prime, betas, A=None,
     TF = tsI[0].shape[1]
     
     return errors, TF
-
-
-def multi_year_batch_calibration(df_gci, df_bs, years, A, R, B_dict_base,
-                                 qm=0.5, rl=1.0, T=1, threshold=1e-6,
-                                 parallel_processes=1, verbose=False,
-                                 low_precision_counts=False):
-    """
-    Kalibrasi gabungan multi-tahun PPI (batch), menghasilkan satu set parameter gabungan.
-    
-    Args:
-        df_gci: DataFrame skor indikator per tahun (kolom: '2020', ..., '2024')
-        df_bs: DataFrame alokasi per tahun (kolom: '2020', ..., '2024')
-        years: Daftar tahun yang ingin digunakan, misalnya [2020, 2021, ..., 2024]
-        A: Matriks teknis A (N x N)
-        R: Matriks instrumental indicator (N x M)
-        B_dict_base: Dictionary kontribusi (i, j) dari R
-        Other args: parameter kalibrasi PPI
-        
-    Returns:
-        parameter: dict hasil kalibrasi gabungan (alpha, gamma, theta, ...)
-    """
-    import numpy as np
-    from copy import deepcopy
-
-    N = df_gci.shape[0]
-    batch_size = len(years)
-
-    I0_all = []
-    IF_all = []
-    Bs_all = []
-    success_rates_all = []
-    A_all = []
-    R_all = []
-    B_dict_expanded = {}
-
-    for k, year in enumerate(years):
-        # I0 dianggap nol
-        I0 = np.zeros(N)
-        IF = df_gci[str(year)].values.astype(float)
-        Bs = np.tile(df_bs[str(year)].values.astype(float), (T, 1)).T
-        success = np.clip(IF, 0.05, 0.95)
-
-        I0_all.append(I0)
-        IF_all.append(IF)
-        Bs_all.append(Bs)
-        success_rates_all.append(success)
-
-        A_all.append(deepcopy(A))
-        R_all.append(deepcopy(R))
-
-        # Expand B_dict dengan offset index
-        offset = k * N
-        for (i, j), val in B_dict_base.items():
-            B_dict_expanded[(i + offset, j)] = val
-
-    # Gabungkan semua ke satu array besar
-    I0_batch = np.concatenate(I0_all)
-    IF_batch = np.concatenate(IF_all)
-    success_batch = np.concatenate(success_rates_all)
-    Bs_batch = np.vstack(Bs_all)
-    A_batch = np.vstack(A_all)
-    R_batch = np.vstack(R_all)
-
-    # Kalibrasi gabungan
-    parameters = ppi.calibrate(
-        I0_batch,
-        IF_batch,
-        success_batch,
-        A=A_batch,
-        R=R_batch,
-        qm=qm,
-        rl=rl,
-        Bs=Bs_batch,
-        B_dict=B_dict_expanded,
-        T=T,
-        threshold=threshold,
-        parallel_processes=parallel_processes,
-        verbose=verbose,
-        low_precision_counts=low_precision_counts
-    )
-
-    return parameters
-
-
 
 
 
