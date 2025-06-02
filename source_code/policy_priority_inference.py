@@ -487,7 +487,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
 def multi_year_batch_calibration(df_gci, df_bs, years, A, R, B_dict_base,
                                  qm=0.5, rl=1.0, T=1, threshold=1e-6,
                                  parallel_processes=1, verbose=False,
-                                 low_precision_counts=False):
+                                 low_precision_counts=False, year_column_ranges):
     N = df_gci.shape[0]
     I0_all, IF_all, Bs_all, success_rates_all = [], [], [], []
     R_all = []
