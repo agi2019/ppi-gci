@@ -484,64 +484,7 @@ def run_ppi(I0, alphas, alphas_prime, betas, A=None, R=None, bs=None, qm=None, r
     return tsI, tsC, tsF, tsP, tsS, tsG
 
 
-def multi_year_batch_calibration(df_gci, df_bs, years, year_column_ranges, A, R, B_dict_base,
-                                 qm=0.5, rl=1.0, T=1, threshold=1e-6,
-                                 parallel_processes=1, verbose=False,
-                                 low_precision_counts=False):
-    N = df_gci.shape[0]
-    I0_all, IF_all, Bs_all, success_rates_all = [], [], [], []
-    R_all = []
-    B_dict_expanded = {}
 
-    for k, year in enumerate(years):
-        I0 = np.zeros(N)
-        IF = df_gci[str(year)].values.astype(float)
-        cols = year_column_ranges[year]
-        Bs = df_bs.iloc[:, cols].values.astype(float)
-        success = np.clip(IF, 0.05, 0.95)  
-        R_matrix = np.tile(R.values.reshape(-1, 1), (1, T))
-        R_all.append(R_matrix)
-        success = np.clip(IF, 0.05, 0.95)  
-        I0_all.append(I0)
-        IF_all.append(IF)
-        Bs_all.append(Bs)
-        success_rates_all.append(success)
-        R_all.append(deepcopy(R))
-
-        offset = k * N
-        for (i, j), val in B_dict_base.items():
-            B_dict_expanded[(i + offset, j)] = val
-
-    I0_batch = np.concatenate(I0_all)
-    IF_batch = np.concatenate(IF_all)
-    success_batch = np.concatenate(success_rates_all)
-    Bs_batch = np.vstack(Bs_all)
-    R_batch = np.vstack(R_all)
-    A_batch = block_diag(*[A for _ in years])					 
-    print("I0_batch.shape:", I0_batch.shape)           # harus (N_total,)
-    print("IF_batch.shape:", IF_batch.shape)           # harus (N_total,)
-    print("success_batch.shape:", success_batch.shape)   # harus (N_total,)
-    print("R_batch.shape:", R_batch.shape)             # ideal: (N_total,) atau (N_total, T)
-    print("Bs_batch.shape:", Bs_batch.shape)           # harus (N_total, T)
-    print("A_batch.shape:", A_batch.shape)             # harus (N_total, N_total)
-    print("Jumlah item di B_dict_batch:", len(B_dict_expanded))  # harus
-    
-    parameters = calibrate(
-        I0_batch, IF_batch, success_batch,
-        A=A_batch,
-        R=R_batch,
-        qm=qm,
-        rl=rl,
-        Bs=Bs_batch,
-        B_dict=B_dict_expanded,
-        T=T,
-        threshold=threshold,
-        parallel_processes=parallel_processes,
-        verbose=verbose,
-        low_precision_counts=low_precision_counts
-    )
-
-    return parameters
 					 
 ## Calibrates PPI automatically and return a Pandas DataFrame with the parameters, errors, and goodness of fit
 def calibrate(I0, IF, success_rates, A=None, R=None, bs=None, qm=None, rl=None,  Bs=None, B_dict=None, 
